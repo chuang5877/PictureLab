@@ -11,7 +11,7 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("water.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
@@ -20,17 +20,45 @@ public class PictureTester
   public static void keepOnlyBlue(){
     Picture beach= new Picture("beach.jpg");
     beach.explore();
-    beach.zeroGreen();
-    beach.zeroRed();
+    beach.keepOnlyBlue();
     beach.explore();
   }
-  
+
+  public static void negate(){
+    Picture beach=new Picture("beach.jpg");
+    beach.explore();
+    beach.negate();
+    beach.explore();
+  }
+
+  public static void grayscale(){
+    Picture beach=new Picture("water.jpg");
+    beach.explore();
+    beach.grayscale();
+    beach.explore();
+  }
+
+  public static void fixUnderwater(){
+    Picture beach=new Picture("water.jpg");
+    beach.explore();
+    beach.fixUnderwater();
+    beach.explore();
+  }
+
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorVerticalRightToLeft()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
   
@@ -88,6 +116,10 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    keepOnlyBlue();
+    //keepOnlyBlue();
+    //negate();
+    //grayscale();
+    //fixUnderwater();
+    testMirrorVerticalRightToLeft();
   }
 }
